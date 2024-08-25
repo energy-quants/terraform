@@ -28,7 +28,7 @@ variable "address_space" {
 
 variable "dns_servers" {
   description = "List of IP addresses of DNS servers to be used."
-  type        = optional(list(string))
+  type        = list(string)
   default     = null
 }
 
