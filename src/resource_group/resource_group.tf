@@ -14,7 +14,7 @@ resource "random_id" "id" {
 resource "azurerm_resource_group" "rg" {
   name = (
     var.append_uid
-    ? "${var.name}-${random_id.id[0].hex}"
+    ? "${local.name_prefix}-rg-${var.name}-${random_id.id[0].hex}"
     : "${var.name}"
   )
   location = var.location

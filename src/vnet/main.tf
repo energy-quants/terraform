@@ -7,9 +7,10 @@ terraform {
 }
 
 
-locals{
+locals {
   location_code = {
-    australiaeast = "ae",
+    australiaeast      = "ae",
+    australiasoutheast = "as",
   }
   name_prefix = "eq-${local.location_code[var.location]}"
   tags = merge(var.tags, {"name" = "${var.name}"})
